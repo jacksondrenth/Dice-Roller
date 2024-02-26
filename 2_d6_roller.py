@@ -44,21 +44,21 @@ root.title('D6 Roller')
 root.configure()
 
 # picture
+img = Image.open('dies/S1.png')
+img = img.resize((width, height))
+img_tk = ImageTk.PhotoImage(img)
+label = ttk.Label(root, image=img_tk)
+label.grid(row=0, column=0)
+
+# picture 2
 img2 = Image.open('dies/S1.png')
 img2 = img2.resize((width, height))
 img_tk2 = ImageTk.PhotoImage(img2)
 label2 = ttk.Label(root, image=img_tk2)
-label2.grid(row=0, column=0)
-
-# picture 2
-img3 = Image.open('dies/S1.png')
-img3 = img3.resize((width, height))
-img_tk3 = ImageTk.PhotoImage(img3)
-label3 = ttk.Label(root, image=img_tk3)
-label3.grid(row=0, column=1)
+label2.grid(row=0, column=1)
 
 # button
-button = ttk.Button(root, text="Roll D6", style='TButton', command=lambda: dice_roll(0, label2, label3))
+button = ttk.Button(root, text="Roll D6", style='TButton', command=lambda: dice_roll(0, label, label2))
 button.grid()
 button.config(width=20, padding=20)
 
